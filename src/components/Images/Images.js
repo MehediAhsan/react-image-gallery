@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Image from '../Image/Image';
+import Search from '../Search/Search';
 
 const Images = () => {
     const [images, setImages] = useState([]);
@@ -21,6 +22,8 @@ const Images = () => {
 
     return (
         <div className="container mx-auto my-5">
+
+        <Search searchText={(text) => setTerm(text)} />
 
       {!isLoading && images.length === 0 && <h1 className="text-5xl text-center mx-auto mt-32">No Images Found</h1> }
 
